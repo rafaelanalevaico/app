@@ -1,0 +1,134 @@
+[
+ {
+  "id": "01",
+  "slug": "01-mergulho-no-sono",
+  "t": "Mergulho no Sono",
+  "d": "Relaxe e durma profundamente",
+  "c": "calma",
+  "tone": 2
+ },
+ {
+  "id": "02",
+  "slug": "02-forca-que-desperta",
+  "t": "Força que Desperta",
+  "d": "Motivação firme e duradoura",
+  "c": "forca",
+  "tone": 1
+ },
+ {
+  "id": "03",
+  "slug": "03-respiro-sereno",
+  "t": "Respiro Sereno",
+  "d": "Solte o estresse e volte ao centro",
+  "c": "calma",
+  "tone": 4
+ },
+ {
+  "id": "04",
+  "slug": "04-corpo-em-harmonia",
+  "t": "Corpo em Harmonia",
+  "d": "Emagrecimento leve e consciente",
+  "c": "crescer",
+  "tone": 3,
+  "aviso": 1
+ },
+ {
+  "id": "05",
+  "slug": "05-a-forca-do-feminino",
+  "t": "A Força do Feminino",
+  "d": "Reconecte-se com o seu poder",
+  "c": "forca",
+  "tone": 3
+ },
+ {
+  "id": "06",
+  "slug": "06-voz-na-relacao",
+  "t": "Voz na Relação",
+  "d": "Expresse o que sente com segurança e afeto",
+  "c": "forca",
+  "tone": 1
+ },
+ {
+  "id": "07",
+  "slug": "07-permissao-para-brilhar",
+  "t": "Permissão para Brilhar",
+  "d": "Liberte-se do medo de crescer",
+  "c": "forca",
+  "tone": 2
+ },
+ {
+  "id": "08",
+  "slug": "08-fluxo-da-prosperidade",
+  "t": "Fluxo da Prosperidade",
+  "d": "Abra caminho para a abundância",
+  "c": "crescer",
+  "tone": 1
+ },
+ {
+  "id": "09",
+  "slug": "09-a-luz-que-retorna",
+  "t": "A Luz que Retorna",
+  "d": "Acolhimento para dias difíceis",
+  "c": "acolher",
+  "tone": 3,
+  "aviso": 1
+ },
+ {
+  "id": "10",
+  "slug": "10-antes-do-mergulho",
+  "t": "Antes do Mergulho",
+  "d": "Prepare-se para a sua sessão",
+  "c": "calma",
+  "tone": 1
+ },
+ {
+  "id": "11",
+  "slug": "11-despertar-do-dia",
+  "t": "Despertar do Dia",
+  "d": "Comece o dia com propósito",
+  "c": "forca",
+  "tone": 3
+ },
+ {
+  "id": "12",
+  "slug": "12-abraco-na-crianca-interior",
+  "t": "Abraço na Criança Interior",
+  "d": "Acolha quem você foi",
+  "c": "acolher",
+  "tone": 4
+ },
+ {
+  "id": "13",
+  "slug": "13-viagem-dos-pequenos-sonhos",
+  "t": "Viagem dos Pequenos Sonhos",
+  "d": "Hipnose suave para crianças",
+  "c": "calma",
+  "tone": 1,
+  "aviso": 2
+ },
+ {
+  "id": "14",
+  "slug": "14-mente-clara",
+  "t": "Mente Clara",
+  "d": "Foco e aprendizado mais rápido",
+  "c": "crescer",
+  "tone": 2
+ },
+ {
+  "id": "15",
+  "slug": "15-a-carta",
+  "t": "A Carta",
+  "d": "Exercício guiado de escrita",
+  "c": "acolher",
+  "tone": 4
+ },
+ {
+  "id": "16",
+  "slug": "16-alivio-que-flui",
+  "t": "Alívio que Flui",
+  "d": "Conforto para dores crônicas",
+  "c": "acolher",
+  "tone": 2,
+  "aviso": 1
+ }
+]

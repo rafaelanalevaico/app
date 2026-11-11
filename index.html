@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Rafaela Nalevaico</title>
+<meta name="description" content="Áudios de auto-hipnose guiada por Rafaela Nalevaico.">
+<meta name="theme-color" content="#070a3a">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="img/icon-192.png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Rafaela Nalevaico">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gilda+Display&family=Questrial&family=Josefin+Slab:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --noturno:#111888; --real:#2841CC; --creme:#FBEECE; --pessego:#E9987F; --neblina:#6C7E96;
+  --ink:#0a0e3a; --deep:#04061f;
+  --st:env(safe-area-inset-top,0px); --sb:env(safe-area-inset-bottom,0px);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;background:var(--deep);overscroll-behavior:none}
+body{font-family:Questrial,system-ui,sans-serif;color:var(--creme);-webkit-font-smoothing:antialiased}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+#app{max-width:460px;height:100dvh;margin:0 auto;position:relative;overflow:hidden;overflow:clip;display:flex;flex-direction:column;background:var(--deep)}
+main{flex:1;position:relative;overflow:hidden}
+
+.satin{
+  background:
+    radial-gradient(120% 60% at 110% 10%, rgba(40,65,204,.55), transparent 55%),
+    radial-gradient(90% 50% at -20% 45%, rgba(40,65,204,.35), transparent 60%),
+    linear-gradient(160deg, transparent 30%, rgba(255,255,255,.07) 38%, transparent 46%),
+    linear-gradient(200deg, transparent 52%, rgba(255,255,255,.06) 60%, transparent 68%),
+    linear-gradient(170deg, #0b1060 0%, #070a3a 50%, #04061f 100%);
+  color:var(--creme);
+}
+.paper{background-color:var(--creme);
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='1.1' numOctaves='2'/><feColorMatrix values='0 0 0 0 .4  0 0 0 0 .3  0 0 0 0 .1  0 0 0 .06 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+  color:var(--noturno)}
+.iso{display:block;flex:none;background:currentColor;-webkit-mask:url(img/isotipo.png) center/contain no-repeat;mask:url(img/isotipo.png) center/contain no-repeat}
+.logoh{display:block;flex:none;background:currentColor;-webkit-mask:url(img/logo-horizontal.png) left center/contain no-repeat;mask:url(img/logo-horizontal.png) left center/contain no-repeat}
+.star{width:16px;height:16px;flex:none}
+
+.view{position:absolute;inset:0;overflow-y:auto;-webkit-overflow-scrolling:touch;display:none;padding:calc(var(--st) + 18px) 22px 28px}
+.view.on{display:block}
+.view.hasmini{padding-bottom:96px}
+
+/* ---------- Início ---------- */
+.topline{display:flex;justify-content:space-between;align-items:center}
+.greet{font-family:'Josefin Slab',serif;font-style:italic;font-size:17px;color:var(--pessego);margin-top:14px}
+.home h1{font-family:'Gilda Display',serif;font-weight:400;font-size:28px;line-height:1.15;margin:4px 0 18px}
+.feature{display:block;width:100%;text-align:left;border-radius:24px;padding:18px 20px;position:relative;overflow:hidden;
+  background:linear-gradient(150deg, rgba(251,238,206,.14), rgba(251,238,206,.04));border:1px solid rgba(251,238,206,.22)}
+.feature .tag{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:var(--pessego)}
+.feature h2{font-family:'Gilda Display',serif;font-weight:400;font-size:22px;margin:6px 0 2px}
+.feature p{font-family:'Josefin Slab',serif;font-size:16px;opacity:.85;max-width:72%}
+.feature .iso{position:absolute;right:-30px;bottom:-34px;width:130px;height:130px;color:var(--real);opacity:.55}
+.pill{display:inline-flex;align-items:center;gap:8px;margin-top:14px;background:var(--pessego);color:var(--ink);
+  border-radius:999px;padding:9px 16px 9px 10px;font-size:13px;letter-spacing:.06em;position:relative}
+.pill i{width:24px;height:24px;border-radius:50%;background:var(--ink);display:grid;place-items:center}
+.pill i:after{content:"";border-left:7px solid var(--pessego);border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px}
+.sec{font-size:11px;letter-spacing:.3em;text-transform:uppercase;opacity:.7;margin:24px 0 12px}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.chip{text-align:left;border-radius:16px;padding:12px 14px;font-family:'Gilda Display',serif;font-size:16px;border:1px solid rgba(251,238,206,.18);background:rgba(4,6,31,.35)}
+.chip small{display:block;font-family:Questrial;font-size:10px;letter-spacing:.14em;opacity:.6;margin-top:3px;text-transform:uppercase}
+.chip .e{font-size:15px;margin-bottom:4px;display:block}
+.cont{display:flex;align-items:center;gap:12px;width:100%;text-align:left;margin-top:12px;padding:12px 14px;border-radius:16px;border:1px solid rgba(251,238,206,.18);background:rgba(4,6,31,.35)}
+.cont .iso{width:34px;height:34px;color:var(--pessego)}
+.cont b{font-family:'Gilda Display',serif;font-weight:400;font-size:16px;display:block}
+.cont span{font-size:11px;opacity:.65;letter-spacing:.06em}
+.install{margin-top:22px;padding:14px 16px;border-radius:16px;border:1px dashed rgba(233,152,127,.55);font-size:13px;line-height:1.45;display:none}
+.install.on{display:block}
+.install b{color:var(--pessego);font-weight:400;letter-spacing:.04em}
+.install button{margin-top:10px;background:var(--pessego);color:var(--ink);border-radius:999px;padding:8px 16px;font-size:13px}
+.legal{margin-top:22px;font-family:'Josefin Slab',serif;font-size:14px;line-height:1.4;opacity:.6}
+
+/* ---------- Listas ---------- */
+.lib h1{font-family:'Gilda Display',serif;font-weight:400;font-size:30px;margin-top:14px}
+.lib .sub{font-family:'Josefin Slab',serif;font-style:italic;color:var(--neblina);font-size:17px;margin-bottom:14px}
+.filters{display:flex;gap:8px;margin:0 -22px 8px;padding:0 22px 6px;overflow-x:auto;scrollbar-width:none}
+.filters::-webkit-scrollbar{display:none}
+.filters button{flex:none;font-size:12px;padding:8px 14px;border-radius:999px;border:1px solid rgba(17,24,136,.28);letter-spacing:.06em;color:var(--noturno)}
+.filters button.on{background:var(--noturno);color:var(--creme);border-color:var(--noturno)}
+.item{display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid rgba(108,126,150,.25);cursor:pointer}
+.item.off .thumb,.item.off .meta{opacity:.5}
+.thumb{width:58px;height:58px;border-radius:16px;flex:none;position:relative;overflow:hidden}
+.thumb .iso{position:absolute;inset:8px;color:rgba(251,238,206,.85)}
+.t1{background:linear-gradient(150deg,#2841CC,#111888)}
+.t2{background:linear-gradient(150deg,#111888,#04061f)}
+.t3{background:linear-gradient(150deg,#E9987F,#c66e57)}
+.t4{background:linear-gradient(150deg,#6C7E96,#3d4a5e)}
+.meta{min-width:0;flex:1}
+.meta h4{font-family:'Gilda Display',serif;font-weight:400;font-size:18px;line-height:1.15}
+.meta p{font-size:12.5px;color:var(--neblina);margin-top:3px;line-height:1.3}
+.heart{width:40px;height:40px;display:grid;place-items:center;flex:none;color:var(--noturno)}
+.heart svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.5}
+.heart.on{color:var(--pessego)}
+.heart.on svg{fill:currentColor}
+.empty{font-family:'Josefin Slab',serif;font-style:italic;font-size:17px;color:var(--neblina);padding:30px 0;text-align:center;line-height:1.5}
+
+/* ---------- Barra inferior ---------- */
+.tabbar{flex:none;display:flex;justify-content:space-around;padding:10px 8px calc(var(--sb) + 10px);font-size:10px;letter-spacing:.08em;text-transform:uppercase;background:#04061f;border-top:1px solid rgba(251,238,206,.1);position:relative;z-index:3}
+.tabbar button{display:flex;flex-direction:column;align-items:center;gap:5px;opacity:.5;min-width:64px;padding:4px 0}
+.tabbar button.on{opacity:1}
+.tabbar svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.5}
+
+/* ---------- Mini player ---------- */
+#mini{position:absolute;left:12px;right:12px;bottom:calc(var(--sb) + 76px);z-index:4;display:none;align-items:center;gap:12px;
+  padding:10px 12px;border-radius:18px;background:#0d1270;border:1px solid rgba(251,238,206,.2);box-shadow:0 10px 30px -10px rgba(0,0,0,.7);cursor:pointer}
+#mini.on{display:flex}
+#mini .iso{width:34px;height:34px;color:var(--creme)}
+#mini b{font-family:'Gilda Display',serif;font-weight:400;font-size:16px;flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#mini button{width:40px;height:40px;border-radius:50%;background:var(--pessego);display:grid;place-items:center;flex:none}
+
+/* ---------- Player ---------- */
+#player{position:absolute;inset:0;z-index:6;display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:calc(var(--st) + 14px) 24px calc(var(--sb) + 22px);transform:translateY(102%);visibility:hidden;transition:transform .38s cubic-bezier(.2,.8,.2,1),visibility 0s .38s;overflow-y:auto}
+#player.open{transform:none;visibility:visible;transition:transform .38s cubic-bezier(.2,.8,.2,1),visibility 0s}
+.phead{align-self:stretch;display:flex;justify-content:space-between;align-items:center}
+.phead button{width:40px;height:40px;display:grid;place-items:center}
+.phead svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.5}
+.orb{width:min(56vw,230px);aspect-ratio:1;margin:auto 0 20px;position:relative;display:grid;place-items:center;flex:none}
+.orb:before{content:"";position:absolute;inset:-18px;border-radius:50%;background:radial-gradient(circle, rgba(40,65,204,.55), transparent 65%)}
+.orb:after{content:"";position:absolute;inset:-4px;border-radius:50%;border:1px dashed rgba(251,238,206,.35)}
+.orb .iso{width:90%;height:90%;color:var(--creme);position:relative;animation:spin 70s linear infinite;animation-play-state:paused}
+#player.playing .orb .iso{animation-play-state:running}
+@keyframes spin{to{transform:rotate(360deg)}}
+#player .tag{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--pessego)}
+#player h2{font-family:'Gilda Display',serif;font-weight:400;font-size:29px;line-height:1.12;margin:8px 0 6px}
+#player .phrase{font-family:'Josefin Slab',serif;font-style:italic;font-size:18px;opacity:.85}
+#player .aviso{font-size:11.5px;line-height:1.4;opacity:.6;margin-top:10px;max-width:300px}
+.bar{width:100%;margin-top:22px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:24px;background:transparent;--p:0%}
+input[type=range]::-webkit-slider-runnable-track{height:3px;border-radius:3px;background:linear-gradient(90deg,var(--pessego) var(--p),rgba(251,238,206,.22) var(--p))}
+input[type=range]::-moz-range-track{height:3px;border-radius:3px;background:linear-gradient(90deg,var(--pessego) var(--p),rgba(251,238,206,.22) var(--p))}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:14px;height:14px;border-radius:50%;background:var(--creme);margin-top:-5.5px}
+input[type=range]::-moz-range-thumb{width:14px;height:14px;border:0;border-radius:50%;background:var(--creme)}
+.times{display:flex;justify-content:space-between;font-size:12px;opacity:.65}
+.controls{display:flex;align-items:center;justify-content:center;gap:30px;margin-top:10px}
+.controls .small{font-size:13px;opacity:.8;letter-spacing:.06em;width:56px;height:48px}
+.bigplay{width:74px;height:74px;border-radius:50%;background:var(--pessego);display:grid;place-items:center;box-shadow:0 10px 30px -8px rgba(233,152,127,.7)}
+.ico-play{border-left:20px solid var(--ink);border-top:13px solid transparent;border-bottom:13px solid transparent;margin-left:6px}
+.ico-pause{display:flex;gap:7px}.ico-pause i{width:6px;height:24px;background:var(--ink);border-radius:2px}
+#mini .ico-play{border-left-width:12px;border-top-width:8px;border-bottom-width:8px;margin-left:3px}
+#mini .ico-pause{gap:4px}#mini .ico-pause i{width:4px;height:14px}
+.ambient{margin:18px 0 auto;font-size:11px;letter-spacing:.14em;text-transform:uppercase;display:flex;gap:8px;align-items:center;padding:9px 14px;border-radius:999px;border:1px solid rgba(251,238,206,.2);opacity:.75}
+.ambient.on{border-color:var(--pessego);opacity:1}
+
+/* ---------- Comunidade ---------- */
+.com{text-align:center}
+.com .logoh{margin:0 auto;-webkit-mask-position:center;mask-position:center}
+.com .tag{font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--pessego);margin-top:26px}
+.com h1{font-family:'Gilda Display',serif;font-weight:400;font-size:30px;line-height:1.15;margin:8px 0 10px}
+.com .lead{font-family:'Josefin Slab',serif;font-size:18px;line-height:1.4;opacity:.88;max-width:310px;margin:0 auto}
+.com ul{list-style:none;text-align:left;margin:24px auto 0;max-width:310px;border-radius:20px;padding:6px 18px;border:1px solid rgba(251,238,206,.18);background:rgba(4,6,31,.35)}
+.com li{display:flex;gap:12px;align-items:flex-start;padding:13px 0;font-size:14.5px;line-height:1.4;border-bottom:1px solid rgba(251,238,206,.1)}
+.com li:last-child{border:0}
+.com li .star{margin-top:3px;width:13px;height:13px}
+.com li b{font-family:'Gilda Display',serif;font-weight:400;font-size:17px;display:block}
+.wa{display:inline-flex;align-items:center;gap:10px;margin-top:26px;background:var(--pessego);color:var(--ink);text-decoration:none;border-radius:999px;padding:15px 26px;font-size:15px;letter-spacing:.05em;box-shadow:0 10px 30px -8px rgba(233,152,127,.7)}
+.wa svg{width:22px;height:22px;fill:currentColor}
+.wa.off{background:none;color:var(--creme);border:1px dashed rgba(251,238,206,.4);box-shadow:none;opacity:.75}
+.com-note{font-size:12px;opacity:.6;margin-top:12px}
+.cont .star{width:22px;height:22px;margin:0 6px}
+
+/* ---------- Área da Rafaela ---------- */
+.adm-link{display:block;margin:14px auto 0;font-size:11px;letter-spacing:.2em;text-transform:uppercase;opacity:.5;padding:12px}
+.form label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--neblina);margin:14px 0 6px}
+.form input,.form select{width:100%;font:inherit;font-size:16px;padding:12px 14px;border-radius:12px;border:1px solid rgba(17,24,136,.28);background:rgba(255,255,255,.55);color:var(--noturno)}
+.btn{display:inline-block;background:var(--noturno);color:var(--creme);border-radius:999px;padding:11px 20px;font-size:13px;letter-spacing:.06em;margin-top:16px}
+.btn.ghost{background:none;color:var(--noturno);border:1px solid rgba(17,24,136,.35)}
+.btn.sm{padding:9px 14px;font-size:12px;margin:0;flex:none}
+.btn[disabled]{opacity:.45}
+.adm-note{font-size:14px;line-height:1.5;color:var(--neblina);margin-top:10px}
+.adm-h{font-family:'Gilda Display',serif;font-size:21px;margin:26px 0 2px}
+.st{font-size:12px;letter-spacing:.04em;color:var(--neblina);margin-top:3px}
+.st.ok{color:#2a7a4f}.st.demo,.st.pend{color:#b0603f}
+.prog{height:3px;background:rgba(17,24,136,.15);border-radius:3px;margin-top:7px;overflow:hidden}
+.prog b{display:block;height:100%;background:var(--pessego);width:0;transition:width .2s}
+
+#toast{position:absolute;left:50%;bottom:calc(var(--sb) + 150px);transform:translate(-50%,20px);z-index:9;background:var(--creme);color:var(--noturno);
+  padding:11px 18px;border-radius:999px;font-size:13px;opacity:0;pointer-events:none;transition:.3s;white-space:nowrap;box-shadow:0 10px 30px -10px rgba(0,0,0,.6)}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+@media (prefers-reduced-motion: reduce){.orb .iso{animation:none}#player{transition:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs><symbol id="star" viewBox="0 0 20 20"><path d="M10 0 C10.6 7 13 9.4 20 10 C13 10.6 10.6 13 10 20 C9.4 13 7 10.6 0 10 C7 9.4 9.4 7 10 0Z" fill="#E9987F"/></symbol></defs>
+</svg>
+
+<div id="app">
+  <main>
+    <!-- INÍCIO -->
+    <section class="view satin home on" id="v-home">
+      <div class="topline">
+        <span class="logoh" style="width:150px;height:65px" role="img" aria-label="Rafaela Nalevaico"></span>
+        <svg class="star"><use href="#star"/></svg>
+      </div>
+      <div class="greet" id="greet">Bom dia</div>
+      <h1>Respire.<br>Seu fluxo interno<br>está esperando.</h1>
+      <div id="featured"></div>
+      <div id="continue"></div>
+      <div class="sec">Para este momento</div>
+      <div class="chips">
+        <button class="chip" data-cat="calma"><span class="e">🌊</span>Calma<small>Sono e respiro</small></button>
+        <button class="chip" data-cat="forca"><span class="e">💫</span>Força<small>Despertar</small></button>
+        <button class="chip" data-cat="acolher"><span class="e">🕊</span>Acolher<small>Paz interior</small></button>
+        <button class="chip" data-cat="crescer"><span class="e">🌱</span>Crescer<small>Novos caminhos</small></button>
+      </div>
+      <button class="cont" data-tab="com" style="margin-top:16px"><svg class="star"><use href="#star"/></svg><div><b>Workshops gratuitos</b><span>Entre na comunidade da Rafaela</span></div></button>
+      <div class="install" id="install"></div>
+      <p class="legal">Ouça em um lugar seguro e tranquilo, nunca ao dirigir. Os áudios são complementares e não substituem acompanhamento médico ou psicológico.</p>
+      <button class="adm-link" data-tab="admin">Área da Rafaela</button>
+    </section>
+
+    <!-- SESSÕES -->
+    <section class="view paper lib" id="v-lib">
+      <span class="logoh" style="width:128px;height:56px;color:var(--noturno)" role="img" aria-label="Rafaela Nalevaico"></span>
+      <h1>Sessões</h1>
+      <div class="sub">Escolha o seu mergulho de hoje</div>
+      <div class="filters" id="filters"></div>
+      <div id="list"></div>
+      <div class="empty">Novos mergulhos em breve</div>
+    </section>
+
+    <!-- FAVORITOS -->
+    <section class="view paper lib" id="v-fav">
+      <span class="logoh" style="width:128px;height:56px;color:var(--noturno)" role="img" aria-label="Rafaela Nalevaico"></span>
+      <h1>Favoritos</h1>
+      <div class="sub">Os áudios que você guardou</div>
+      <div id="favlist"></div>
+    </section>
+
+    <!-- COMUNIDADE -->
+    <section class="view satin com" id="v-com">
+      <span class="logoh" style="width:150px;height:65px" role="img" aria-label="Rafaela Nalevaico"></span>
+      <div class="tag">Comunidade</div>
+      <h1>Ninguém atravessa<br>sozinho.</h1>
+      <p class="lead">Entre no grupo de WhatsApp da Rafaela e participe dos workshops gratuitos que ela conduz.</p>
+      <ul>
+        <li><svg class="star"><use href="#star"/></svg><div><b>Workshops gratuitos</b>Encontros conduzidos pela Rafaela, abertos a todos do grupo.</div></li>
+        <li><svg class="star"><use href="#star"/></svg><div><b>Avisos em primeira mão</b>Saiba antes das datas dos encontros e dos novos áudios.</div></li>
+        <li><svg class="star"><use href="#star"/></svg><div><b>Um espaço de acolhimento</b>Caminhe ao lado de quem está na mesma travessia.</div></li>
+      </ul>
+      <div id="com-cta"></div>
+    </section>
+
+    <!-- ÁREA DA RAFAELA -->
+    <section class="view paper lib" id="v-admin">
+      <span class="logoh" style="width:128px;height:56px;color:var(--noturno)" role="img" aria-label="Rafaela Nalevaico"></span>
+      <h1>Área da Rafaela</h1>
+      <div class="sub">Publique e troque os seus áudios</div>
+      <div id="adm"></div>
+      <input type="file" id="file" accept=".mp3,.m4a,audio/mpeg,audio/mp4,audio/x-m4a" hidden>
+    </section>
+  </main>
+
+  <div id="mini"><span class="iso"></span><b id="mini-t"></b><button id="mini-btn" aria-label="Tocar ou pausar"><span class="ico-play"></span></button></div>
+
+  <nav class="tabbar">
+    <button class="on" data-tab="home"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></svg>Início</button>
+    <button data-tab="lib"><svg viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h10"/></svg>Sessões</button>
+    <button data-tab="com"><svg viewBox="0 0 24 24"><circle cx="9" cy="9" r="3.2"/><path d="M2.5 19c.8-3.4 3.300-5 6.500-5s5.700 1.600 6.500 5"/><circle cx="17" cy="8" r="2.500"/><path d="M17 13c2.400 0 4 1.300 4.600 4"/></svg>Comunidade</button>
+    <button data-tab="fav"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg>Favoritos</button>
+  </nav>
+
+  <!-- PLAYER -->
+  <section class="satin" id="player" aria-hidden="true">
+    <div class="phead">
+      <button id="p-close" aria-label="Fechar"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></button>
+      <span class="logoh" style="width:120px;height:52px;-webkit-mask-position:center;mask-position:center" role="img" aria-label="Rafaela Nalevaico"></span>
+      <button class="heart" id="p-fav" aria-label="Favoritar" style="color:var(--creme)"><svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg></button>
+    </div>
+    <div class="orb"><span class="iso"></span></div>
+    <div class="tag" id="p-tag"></div>
+    <h2 id="p-title"></h2>
+    <div class="phrase" id="p-desc"></div>
+    <div class="aviso" id="p-aviso"></div>
+    <div class="bar">
+      <input type="range" id="seek" min="0" max="1000" value="0" aria-label="Posição do áudio">
+      <div class="times"><span id="t-cur">0:00</span><span id="t-dur">0:00</span></div>
+    </div>
+    <div class="controls">
+      <button class="small" id="back15">−15s</button>
+      <button class="bigplay" id="p-play" aria-label="Tocar ou pausar"><span class="ico-play"></span></button>
+      <button class="small" id="fwd15">+15s</button>
+    </div>
+    <button class="ambient" id="amb"><svg class="star" style="width:12px;height:12px"><use href="#star"/></svg><span id="amb-t">Som de mar: desligado</span></button>
+  </section>
+
+  <div id="toast"></div>
+  <audio id="au" preload="metadata"></audio>
+</div>
+
+<script>
+/* ===================== LISTA DE ÁUDIOS =====================
+   A lista oficial fica no arquivo "sessoes.json" (esta aqui é só reserva).
+   Um áudio entra no ar quando existe, na pasta "audios", um arquivo
+   com o nome do "slug" (ex.: 04-corpo-em-harmonia.mp3). Aceita .mp3 ou .m4a.
+   A Rafaela faz tudo isso pela "Área da Rafaela", dentro do app. */
+let S=[
+ {id:'01',slug:'01-mergulho-no-sono',t:'Mergulho no Sono',d:'Relaxe e durma profundamente',c:'calma',tone:2},
+ {id:'02',slug:'02-forca-que-desperta',t:'Força que Desperta',d:'Motivação firme e duradoura',c:'forca',tone:1},
+ {id:'03',slug:'03-respiro-sereno',t:'Respiro Sereno',d:'Solte o estresse e volte ao centro',c:'calma',tone:4},
+ {id:'04',slug:'04-corpo-em-harmonia',t:'Corpo em Harmonia',d:'Emagrecimento leve e consciente',c:'crescer',tone:3,aviso:1},
+ {id:'05',slug:'05-a-forca-do-feminino',t:'A Força do Feminino',d:'Reconecte-se com o seu poder',c:'forca',tone:3},
+ {id:'06',slug:'06-voz-na-relacao',t:'Voz na Relação',d:'Expresse o que sente com segurança e afeto',c:'forca',tone:1},
+ {id:'07',slug:'07-permissao-para-brilhar',t:'Permissão para Brilhar',d:'Liberte-se do medo de crescer',c:'forca',tone:2},
+ {id:'08',slug:'08-fluxo-da-prosperidade',t:'Fluxo da Prosperidade',d:'Abra caminho para a abundância',c:'crescer',tone:1},
+ {id:'09',slug:'09-a-luz-que-retorna',t:'A Luz que Retorna',d:'Acolhimento para dias difíceis',c:'acolher',tone:3,aviso:1},
+ {id:'10',slug:'10-antes-do-mergulho',t:'Antes do Mergulho',d:'Prepare-se para a sua sessão',c:'calma',tone:1},
+ {id:'11',slug:'11-despertar-do-dia',t:'Despertar do Dia',d:'Comece o dia com propósito',c:'forca',tone:3},
+ {id:'12',slug:'12-abraco-na-crianca-interior',t:'Abraço na Criança Interior',d:'Acolha quem você foi',c:'acolher',tone:4},
+ {id:'13',slug:'13-viagem-dos-pequenos-sonhos',t:'Viagem dos Pequenos Sonhos',d:'Hipnose suave para crianças',c:'calma',tone:1,aviso:2},
+ {id:'14',slug:'14-mente-clara',t:'Mente Clara',d:'Foco e aprendizado mais rápido',c:'crescer',tone:2},
+ {id:'15',slug:'15-a-carta',t:'A Carta',d:'Exercício guiado de escrita',c:'acolher',tone:4},
+ {id:'16',slug:'16-alivio-que-flui',t:'Alívio que Flui',d:'Conforto para dores crônicas',c:'acolher',tone:2,aviso:1},
+];
+const CATS={todas:'Todas',calma:'Calma',forca:'Força',acolher:'Acolher',crescer:'Crescer'};
+const AVISO={1:'Este áudio é complementar e não substitui acompanhamento médico ou psicológico.',2:'Para a criança ouvir na companhia de um adulto.'};
+
+const $=s=>document.querySelector(s);
+const store={get(k,d){try{const v=JSON.parse(localStorage.getItem(k));return v??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+let fav=new Set(store.get('fav',[])), pos=store.get('pos',{}), dur=store.get('dur',{}), avail=store.get('avail',{}), last=store.get('last',null);
+let filter='todas', cur=null, tab='home', dragging=false;
+const au=$('#au');
+const HEART='<svg viewBox="0 0 24 24"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.600-7 10-7 10z"/></svg>';
+const byId=id=>S.find(s=>s.id===id);
+const esc=v=>String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+/* Áudios de demonstração (voz sintética). Somem quando a Rafaela envia o dela. */
+const DEMOS=['01-mergulho-no-sono','02-forca-que-desperta','03-respiro-sereno','10-antes-do-mergulho'];
+const isDemo=s=>DEMOS.includes(s.slug)&&(avail[s.slug]||'').endsWith('.m4a');
+const fmt=t=>{t=Math.max(0,Math.floor(t||0));return Math.floor(t/60)+':'+String(t%60).padStart(2,'0')};
+const mins=s=>dur[s.slug]?Math.max(1,Math.round(dur[s.slug]/60))+' min · ':'';
+
+/* ---------- Comunidade (link do grupo fica em config.json) ---------- */
+let CFG=store.get('cfg',{whatsapp:''});
+const WA='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.600 15.100L2 22l5-1.300A10 10 0 1 0 12 2zm0 1.800a8.200 8.200 0 1 1-4.300 15.200l-.3-.2-2.900.8.800-2.800-.2-.3A8.200 8.200 0 0 1 12 3.800zM8.600 7.300c-.2 0-.5.100-.7.400-.300.300-1 1-1 2.300s1 2.700 1.100 2.900c.100.200 2 3.100 4.900 4.200 2.400.9 2.900.8 3.400.7.500-.1 1.700-.7 1.900-1.400.2-.7.2-1.200.200-1.400-.1-.1-.3-.2-.6-.4l-1.900-.9c-.3-.1-.5-.1-.7.200l-.8 1c-.1.200-.3.200-.6.100-.3-.2-1.200-.5-2.300-1.400-.8-.8-1.400-1.700-1.600-2-.1-.3 0-.4.100-.6l.5-.5.300-.5c.1-.2 0-.4 0-.5l-.9-2c-.2-.5-.4-.4-.6-.4z"/></svg>';
+const waOk=u=>/^https:\/\/(chat\.whatsapp\.com|wa\.me|(www\.)?whatsapp\.com)\/\S+$/.test(u||'');
+async function loadConfig(){
+  try{const r=await fetch('config.json',{cache:'no-store'});if(r.ok){const j=await r.json();if(j&&typeof j==='object'){CFG=j;store.set('cfg',CFG)}}}catch(e){}
+  renderCom();
+}
+function renderCom(){
+  $('#com-cta').innerHTML=waOk(CFG.whatsapp)
+    ?`<a class="wa" href="${esc(CFG.whatsapp)}" target="_blank" rel="noopener noreferrer">${WA}Entrar no grupo</a><p class="com-note">Você será levado ao WhatsApp.</p>`
+    :`<span class="wa off">${WA}Grupo em breve</span><p class="com-note">O link do grupo será divulgado aqui.</p>`;
+}
+
+/* ---------- Renderização ---------- */
+function row(s){
+  const ok=!!avail[s.slug];
+  return `<div class="item ${ok?'':'off'}" data-id="${s.id}" role="button" tabindex="0">
+    <div class="thumb t${s.tone}"><span class="iso"></span></div>
+    <div class="meta"><h4>${esc(s.t)}</h4><p>${ok?(isDemo(s)?'Demonstração · ':'')+mins(s):'Em breve · '}${esc(s.d)}</p></div>
+    <button class="heart ${fav.has(s.id)?'on':''}" data-fav="${s.id}" aria-label="Favoritar ${esc(s.t)}">${HEART}</button></div>`;
+}
+function render(){
+  const h=new Date().getHours();
+  $('#greet').textContent=h<5?'Boa noite':h<12?'Bom dia':h<18?'Boa tarde':'Boa noite';
+
+  const ready=S.filter(s=>avail[s.slug]);
+  const day=Math.floor(Date.now()/864e5);
+  const f=ready.length?ready[day%ready.length]:S[0];
+  $('#featured').innerHTML=`<button class="feature" data-id="${f.id}">
+     <div class="tag">Sessão do dia</div><h2>${esc(f.t)}</h2><p>${esc(f.d)}${dur[f.slug]?' · '+Math.round(dur[f.slug]/60)+' min':''}</p>
+     <span class="pill"><i></i>${avail[f.slug]?'Começar':'Em breve'}</span><span class="iso"></span></button>`;
+
+  const l=last&&byId(last);
+  $('#continue').innerHTML=(l&&avail[l.slug]&&pos[l.id]>10&&l.id!==f.id)?
+    `<button class="cont" data-id="${l.id}"><span class="iso"></span><div><b>${esc(l.t)}</b><span>Continuar de ${fmt(pos[l.id])}</span></div></button>`:'';
+
+  $('#filters').innerHTML=Object.entries(CATS).map(([k,v])=>`<button class="${k===filter?'on':''}" data-filter="${k}">${v}</button>`).join('');
+  $('#list').innerHTML=S.filter(s=>filter==='todas'||s.c===filter).map(row).join('');
+  const favs=S.filter(s=>fav.has(s.id));
+  $('#favlist').innerHTML=favs.length?favs.map(row).join(''):'<div class="empty">Toque no coração de uma sessão<br>para guardá-la aqui.</div>';
+  if(cur){$('#p-fav').classList.toggle('on',fav.has(cur.id))}
+}
+function go(t){
+  tab=t;
+  document.querySelectorAll('.view').forEach(v=>v.classList.toggle('on',v.id==='v-'+t));
+  document.querySelectorAll('.tabbar button').forEach(b=>b.classList.toggle('on',b.dataset.tab===t));
+  if(t==='admin'){renderAdmin();$('#v-admin').scrollTop=0}
+  if(t==='com'){renderCom();$('#v-com').scrollTop=0}
+}
+let toastT;
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toastT);toastT=setTimeout(()=>t.classList.remove('on'),2400)}
+
+/* ---------- Descobre quais áudios existem na pasta ---------- */
+async function probe(s){
+  for(const ext of ['mp3','m4a']){
+    const url=`audios/${s.slug}.${ext}`;
+    let r; try{r=await fetch(url,{method:'HEAD',cache:'no-store'})}catch(e){return} // sem internet: mantém o que já sabia
+    if(r.ok&&/audio|mp4|mpeg|octet/.test(r.headers.get('content-type')||'')){avail[s.slug]=url;return}
+  }
+  delete avail[s.slug];
+}
+function loadDur(s){
+  if(dur[s.slug]||!avail[s.slug])return;
+  const a=new Audio();a.preload='metadata';a.src=avail[s.slug];
+  a.onloadedmetadata=()=>{if(isFinite(a.duration)){dur[s.slug]=a.duration;store.set('dur',dur);render()}a.src=''};
+}
+async function loadSessions(){
+  try{const r=await fetch('sessoes.json',{cache:'no-store'});if(r.ok){const j=await r.json();if(Array.isArray(j)&&j.length){S=j;store.set('S',S)}}}
+  catch(e){const c=store.get('S',null);if(c)S=c}
+  render();
+}
+async function probeAll(){await Promise.all(S.map(probe));store.set('avail',avail);render();S.forEach(loadDur)}
+
+/* ---------- Player ---------- */
+function openPlayer(push=true){
+  $('#player').classList.add('open');$('#player').setAttribute('aria-hidden','false');
+  if(push)history.pushState({p:1},'');
+  syncMini();
+}
+function closePlayer(fromPop){
+  if(!$('#player').classList.contains('open'))return;
+  $('#player').classList.remove('open');$('#player').setAttribute('aria-hidden','true');
+  if(!fromPop&&history.state&&history.state.p)history.back();
+  syncMini();
+}
+function play(s){
+  if(!avail[s.slug]){toast('Este áudio chega em breve');return}
+  if(!cur||cur.id!==s.id){
+    savePos();
+    cur=s;last=s.id;store.set('last',last);
+    $('#p-tag').textContent='Sessão · '+CATS[s.c];
+    $('#p-title').textContent=s.t;$('#p-desc').textContent=s.d;
+    $('#p-aviso').textContent=AVISO[s.aviso]||'';
+    $('#mini-t').textContent=s.t;
+    $('#p-fav').classList.toggle('on',fav.has(s.id));
+    $('#t-cur').textContent='0:00';$('#t-dur').textContent=fmt(dur[s.slug]);setSeek(0);
+    au.src=avail[s.slug];
+    const start=pos[s.id]||0;
+    au.addEventListener('loadedmetadata',()=>{if(start>10&&start<au.duration-15)au.currentTime=start},{once:true});
+    if('mediaSession' in navigator){
+      navigator.mediaSession.metadata=new MediaMetadata({title:s.t,artist:'Rafaela Nalevaico',album:'Auto-hipnose guiada',
+        artwork:[{src:'img/icon-512.png',sizes:'512x512',type:'image/png'}]});
+    }
+  }
+  au.play().catch(()=>{});
+  openPlayer();
+}
+function toggle(){if(!cur)return;au.paused?au.play().catch(()=>{}):au.pause()}
+function skip(d){if(!cur||!isFinite(au.duration))return;au.currentTime=Math.min(Math.max(0,au.currentTime+d),au.duration-0.5)}
+function setSeek(f){const r=$('#seek');r.value=Math.round(f*1000);r.style.setProperty('--p',(f*100)+'%')}
+function savePos(){if(cur&&au.currentTime>0){pos[cur.id]=au.ended?0:au.currentTime;store.set('pos',pos)}}
+function syncUI(){
+  const playing=!au.paused&&!au.ended;
+  $('#player').classList.toggle('playing',playing);
+  const ic=playing?'<span class="ico-pause"><i></i><i></i></span>':'<span class="ico-play"></span>';
+  $('#p-play').innerHTML=ic;$('#mini-btn').innerHTML=ic;
+  ambSync();
+}
+function syncMini(){
+  const show=!!cur&&!$('#player').classList.contains('open');
+  $('#mini').classList.toggle('on',show);
+  document.querySelectorAll('.view').forEach(v=>v.classList.toggle('hasmini',show));
+}
+let lastSave=0;
+au.addEventListener('timeupdate',()=>{
+  if(!dragging&&isFinite(au.duration)){setSeek(au.currentTime/au.duration);$('#t-cur').textContent=fmt(au.currentTime)}
+  if(Math.abs(au.currentTime-lastSave)>5){lastSave=au.currentTime;savePos()}
+});
+au.addEventListener('loadedmetadata',()=>{$('#t-dur').textContent=fmt(au.duration);if(cur&&isFinite(au.duration)){dur[cur.slug]=au.duration;store.set('dur',dur)}});
+['play','pause','ended'].forEach(e=>au.addEventListener(e,syncUI));
+au.addEventListener('pause',savePos);
+au.addEventListener('ended',()=>{if(cur){pos[cur.id]=0;store.set('pos',pos)}render()});
+au.addEventListener('error',()=>{if(cur)toast('Não foi possível tocar. Verifique a internet.')});
+const seek=$('#seek');
+seek.addEventListener('input',()=>{dragging=true;const f=seek.value/1000;seek.style.setProperty('--p',(f*100)+'%');if(isFinite(au.duration))$('#t-cur').textContent=fmt(f*au.duration)});
+seek.addEventListener('change',()=>{if(isFinite(au.duration))au.currentTime=seek.value/1000*au.duration;dragging=false});
+if('mediaSession' in navigator){
+  const ms=navigator.mediaSession;
+  try{ms.setActionHandler('play',()=>au.play());ms.setActionHandler('pause',()=>au.pause());
+      ms.setActionHandler('seekbackward',()=>skip(-15));ms.setActionHandler('seekforward',()=>skip(15))}catch(e){}
+}
+
+/* ---------- Som de mar (gerado no próprio aparelho) ---------- */
+let ac,ambGain,ambOn=false;
+function ambInit(){
+  ac=new (window.AudioContext||window.webkitAudioContext)();
+  const sr=ac.sampleRate,len=sr*8,buf=ac.createBuffer(1,len,sr),d=buf.getChannelData(0),fade=sr*0.3;
+  let l=0;for(let i=0;i<len;i++){const w=Math.random()*2-1;l=(l+0.02*w)/1.02;d[i]=l*3.5*Math.min(1,i/fade,(len-i)/fade)}
+  const src=ac.createBufferSource();src.buffer=buf;src.loop=true;
+  const lp=ac.createBiquadFilter();lp.type='lowpass';lp.frequency.value=650;
+  const wave=ac.createGain();wave.gain.value=.55;
+  const lfo=ac.createOscillator();lfo.frequency.value=.09;const lg=ac.createGain();lg.gain.value=.4;
+  lfo.connect(lg);lg.connect(wave.gain);
+  ambGain=ac.createGain();ambGain.gain.value=0;
+  src.connect(lp);lp.connect(wave);wave.connect(ambGain);ambGain.connect(ac.destination);
+  src.start();lfo.start();
+}
+function ambSync(){
+  if(!ac)return;
+  const on=ambOn&&!au.paused&&!au.ended;
+  if(on&&ac.state==='suspended')ac.resume();
+  ambGain.gain.setTargetAtTime(on?.3:0,ac.currentTime,.8);
+}
+$('#amb').addEventListener('click',()=>{
+  ambOn=!ambOn;if(ambOn&&!ac){try{ambInit()}catch(e){ambOn=false;toast('Som de mar indisponível neste aparelho');return}}
+  $('#amb').classList.toggle('on',ambOn);$('#amb-t').textContent='Som de mar: '+(ambOn?'ligado':'desligado');ambSync();
+});
+
+/* ---------- Cliques ---------- */
+document.addEventListener('click',e=>{
+  const f=e.target.closest('[data-fav]');
+  if(f){const id=f.dataset.fav;fav.has(id)?fav.delete(id):fav.add(id);store.set('fav',[...fav]);render();return}
+  const t=e.target.closest('[data-tab]');if(t){go(t.dataset.tab);return}
+  if(admClick(e))return;
+  const c=e.target.closest('[data-cat]');if(c){filter=c.dataset.cat;render();go('lib');$('#v-lib').scrollTop=0;return}
+  const fl=e.target.closest('[data-filter]');if(fl){filter=fl.dataset.filter;render();return}
+  const it=e.target.closest('[data-id]');if(it){play(byId(it.dataset.id));return}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('.item'))play(byId(e.target.dataset.id))});
+$('#p-close').addEventListener('click',()=>closePlayer());
+$('#p-play').addEventListener('click',toggle);
+$('#back15').addEventListener('click',()=>skip(-15));
+$('#fwd15').addEventListener('click',()=>skip(15));
+$('#p-fav').addEventListener('click',()=>{if(!cur)return;fav.has(cur.id)?fav.delete(cur.id):fav.add(cur.id);store.set('fav',[...fav]);render()});
+$('#mini').addEventListener('click',e=>{if(e.target.closest('#mini-btn')){toggle()}else{openPlayer()}});
+window.addEventListener('popstate',()=>closePlayer(true));
+window.addEventListener('pagehide',savePos);
+
+/* ---------- Instalar no celular ---------- */
+const standalone=matchMedia('(display-mode: standalone)').matches||navigator.standalone;
+const isIOS=/iphone|ipad|ipod/i.test(navigator.userAgent)||(navigator.platform==='MacIntel'&&navigator.maxTouchPoints>1);
+let deferred;
+const box=$('#install');
+if(!standalone&&isIOS){
+  box.innerHTML='<b>Instale no seu iPhone</b><br>No Safari, toque em <b>Compartilhar</b> (o quadrado com a seta) e depois em <b>Adicionar à Tela de Início</b>.';
+  box.classList.add('on');
+}
+window.addEventListener('beforeinstallprompt',e=>{
+  e.preventDefault();deferred=e;
+  box.innerHTML='<b>Instale no seu celular</b><br>Tenha os áudios a um toque, direto na tela inicial.<br><button id="inst-btn">Instalar app</button>';
+  box.classList.add('on');
+  $('#inst-btn').addEventListener('click',async()=>{deferred.prompt();await deferred.userChoice;box.classList.remove('on')});
+});
+window.addEventListener('appinstalled',()=>box.classList.remove('on'));
+if('serviceWorker' in navigator&&location.protocol.startsWith('http')){navigator.serviceWorker.register('sw.js').catch(()=>{})}
+
+
+/* =====================================================================
+   ÁREA DA RAFAELA
+   Envia os áudios direto para o repositório do GitHub onde o app está
+   hospedado (GitHub Pages). A chave de acesso fica guardada só neste
+   aparelho. Quem não tem a chave não consegue publicar nada.
+   ===================================================================== */
+let gh=store.get('gh',null), pend=store.get('pend',{}), upSlug=null, busy=false;
+const API='https://api.github.com/repos/';
+function ghGuess(){const m=location.hostname.match(/^([^.]+)\.github\.io$/);return m?{owner:m[1],repo:location.pathname.split('/')[1]||m[1]+'.github.io'}:{owner:'',repo:''}}
+function ghErr(st){return st===401?'Chave de acesso inválida ou vencida.':st===403?'A chave não tem permissão de escrita neste repositório.':st===404?'Repositório não encontrado.':st===409||st===422?'O arquivo mudou no meio do envio. Tente de novo.':'Erro do GitHub ('+st+').'}
+async function ghApi(path,opt={}){
+  const r=await fetch(API+gh.owner+'/'+gh.repo+path,{...opt,headers:{Authorization:'Bearer '+gh.token,Accept:'application/vnd.github+json'}});
+  if(r.status===404&&(!opt.method||opt.method==='GET'))return null;
+  if(!r.ok)throw new Error(ghErr(r.status));
+  return r.json();
+}
+function ghPut(path,b64,sha,msg,onp){return new Promise((res,rej)=>{
+  const x=new XMLHttpRequest();x.open('PUT',API+gh.owner+'/'+gh.repo+'/contents/'+path);
+  x.setRequestHeader('Authorization','Bearer '+gh.token);x.setRequestHeader('Accept','application/vnd.github+json');
+  x.upload.onprogress=e=>{if(e.lengthComputable&&onp)onp(e.loaded/e.total)};
+  x.onload=()=>x.status<300?res(JSON.parse(x.responseText)):rej(new Error(ghErr(x.status)));
+  x.onerror=()=>rej(new Error('Sem conexão. Verifique a internet.'));
+  const body={message:msg,content:b64};if(sha)body.sha=sha;if(gh.branch)body.branch=gh.branch;
+  x.send(JSON.stringify(body));
+})}
+const toB64=f=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(String(r.result).split(',')[1]);r.onerror=()=>rej(new Error('Não foi possível ler o arquivo.'));r.readAsDataURL(f)});
+const utf8b64=t=>btoa(unescape(encodeURIComponent(t)));
+const b64utf8=b=>decodeURIComponent(escape(atob(b.replace(/\s/g,''))));
+const ref=()=>gh.branch?'?ref='+encodeURIComponent(gh.branch):'';
+
+function renderAdmin(){
+  const el=$('#adm');
+  if(!gh){
+    const g=ghGuess();
+    el.innerHTML=`<div class="form">
+      <p class="adm-note">Esta área é só para a Rafaela. Conecte uma única vez a conta onde o app está hospedado. A chave fica guardada apenas neste aparelho.</p>
+      <label for="g-owner">Usuário do GitHub</label><input id="g-owner" value="${esc(g.owner)}" autocapitalize="off" autocorrect="off" autocomplete="off">
+      <label for="g-repo">Repositório</label><input id="g-repo" value="${esc(g.repo)}" autocapitalize="off" autocorrect="off" autocomplete="off">
+      <label for="g-token">Chave de acesso</label><input id="g-token" type="password" autocomplete="off">
+      <button class="btn" id="g-in">Conectar</button></div>`;
+    return;
+  }
+  const now=Date.now();
+  el.innerHTML=`<p class="adm-note">Escolha a sessão e envie o áudio (MP3 ou M4A, até 95 MB). Ele entra no ar em alguns minutos.</p>`+
+    S.map(s=>{
+      const a=avail[s.slug],p=pend[s.slug]&&now-pend[s.slug]<15*6e4;
+      const st=p?['pend','Enviado · entra no ar em alguns minutos']:!a?['','Sem áudio']:isDemo(s)?['demo','Voz de demonstração · troque pelo seu']:['ok','No ar'];
+      return `<div class="item" style="cursor:default"><div class="meta"><h4>${esc(s.t)}</h4><p class="st ${st[0]}" id="st-${s.slug}">${st[1]}</p><div class="prog" id="pg-${s.slug}" hidden><b></b></div></div>
+        <button class="btn sm ${a?'ghost':''}" data-up="${s.slug}">${a?'Trocar':'Enviar'}</button></div>`}).join('')+
+    `<div class="form"><div class="adm-h">Grupo do WhatsApp</div>
+      <p class="adm-note">O botão da tela Comunidade leva as pessoas para este link.</p>
+      <label for="w-link">Link de convite do grupo</label><input id="w-link" value="${esc(CFG.whatsapp||'')}" placeholder="https://chat.whatsapp.com/..." inputmode="url" autocapitalize="off" autocorrect="off">
+      <button class="btn" id="w-save">Salvar link</button>
+      <div class="adm-h">Nova sessão</div>
+      <label for="n-t">Nome do áudio</label><input id="n-t" maxlength="40">
+      <label for="n-d">Frase de apoio</label><input id="n-d" maxlength="60">
+      <label for="n-c">Categoria</label><select id="n-c">${Object.entries(CATS).filter(([k])=>k!=='todas').map(([k,v])=>`<option value="${k}">${v}</option>`).join('')}</select>
+      <button class="btn" id="n-add">Criar sessão</button><br>
+      <button class="btn ghost" id="g-out">Desconectar deste aparelho</button></div>`;
+}
+async function ghLogin(){
+  const owner=$('#g-owner').value.trim(),repo=$('#g-repo').value.trim(),token=$('#g-token').value.trim();
+  if(!owner||!repo||!token){toast('Preencha os três campos');return}
+  try{
+    const r=await fetch(API+owner+'/'+repo,{headers:{Authorization:'Bearer '+token,Accept:'application/vnd.github+json'}});
+    if(!r.ok)throw new Error(ghErr(r.status));
+    const j=await r.json();
+    gh={owner,repo,token,branch:j.default_branch};store.set('gh',gh);renderAdmin();toast('Conectado');
+  }catch(e){toast(e.message||'Não foi possível conectar')}
+}
+async function uploadAudio(s,file){
+  const ext=(file.name.split('.').pop()||'').toLowerCase();
+  if(!['mp3','m4a'].includes(ext)){toast('Use um arquivo MP3 ou M4A');return}
+  if(file.size>95e6){toast('Arquivo acima de 95 MB. Exporte em MP3 128 kbps.');return}
+  const st=$('#st-'+s.slug),pg=$('#pg-'+s.slug);
+  busy=true;st.className='st pend';st.textContent='Preparando…';pg.hidden=false;
+  try{
+    const dir=await ghApi('/contents/audios'+ref())||[];
+    const sha=n=>(dir.find(f=>f.name===n)||{}).sha;
+    const name=s.slug+'.'+ext, other=s.slug+'.'+(ext==='mp3'?'m4a':'mp3');
+    const b64=await toB64(file);
+    st.textContent='Enviando… 0%';
+    await ghPut('audios/'+name,b64,sha(name),'Áudio: '+s.t,p=>{const n=Math.round(p*100);st.textContent='Enviando… '+n+'%';pg.firstElementChild.style.width=n+'%'});
+    if(sha(other)){
+      const body={message:'Remove versão antiga: '+s.t,sha:sha(other)};if(gh.branch)body.branch=gh.branch;
+      await ghApi('/contents/audios/'+other,{method:'DELETE',body:JSON.stringify(body)});
+    }
+    pend[s.slug]=Date.now();store.set('pend',pend);delete dur[s.slug];store.set('dur',dur);
+    toast('Áudio enviado');
+  }catch(e){toast(e.message||'Falha no envio')}
+  busy=false;renderAdmin();
+}
+async function addSession(){
+  const t=$('#n-t').value.trim(),d=$('#n-d').value.trim(),c=$('#n-c').value;
+  if(!t){toast('Dê um nome ao áudio');return}
+  const btn=$('#n-add');btn.disabled=true;btn.textContent='Criando…';
+  try{
+    const f=await ghApi('/contents/sessoes.json'+ref());
+    const list=f?JSON.parse(b64utf8(f.content)):S.slice();
+    const n=String(Math.max(0,...list.map(x=>+x.id||0))+1).padStart(2,'0');
+    const slug=n+'-'+t.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'');
+    list.push({id:n,slug,t,d,c,tone:list.length%4+1});
+    await ghPut('sessoes.json',utf8b64(JSON.stringify(list,null,1)),f&&f.sha,'Nova sessão: '+t);
+    S=list;store.set('S',S);render();toast('Sessão criada. Agora envie o áudio.');
+  }catch(e){toast(e.message||'Não foi possível criar')}
+  renderAdmin();
+}
+async function saveWa(){
+  const u=$('#w-link').value.trim();
+  if(u&&!waOk(u)){toast('Cole o link de convite do WhatsApp');return}
+  const btn=$('#w-save');btn.disabled=true;btn.textContent='Salvando…';
+  try{
+    const f=await ghApi('/contents/config.json'+ref());
+    const cfg=Object.assign({},CFG,{whatsapp:u});
+    await ghPut('config.json',utf8b64(JSON.stringify(cfg,null,1)),f&&f.sha,'Link do grupo do WhatsApp');
+    CFG=cfg;store.set('cfg',CFG);renderCom();toast(u?'Link salvo':'Link removido');
+  }catch(e){toast(e.message||'Não foi possível salvar')}
+  renderAdmin();
+}
+function admClick(e){
+  const up=e.target.closest('[data-up]');
+  if(up){if(busy){toast('Aguarde o envio terminar');return true}upSlug=up.dataset.up;$('#file').value='';$('#file').click();return true}
+  if(e.target.closest('#g-in')){ghLogin();return true}
+  if(e.target.closest('#n-add')){addSession();return true}
+  if(e.target.closest('#w-save')){saveWa();return true}
+  if(e.target.closest('#g-out')){gh=null;try{localStorage.removeItem('gh')}catch(_){}renderAdmin();toast('Desconectado');return true}
+  return false;
+}
+$('#file').addEventListener('change',e=>{const f=e.target.files[0],s=S.find(x=>x.slug===upSlug);if(f&&s)uploadAudio(s,f)});
+window.addEventListener('beforeunload',e=>{if(busy){e.preventDefault();e.returnValue=''}});
+
+render();renderCom();loadConfig();loadSessions().then(probeAll);
+</script>
+</body>
+</html>
